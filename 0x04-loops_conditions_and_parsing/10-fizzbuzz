@@ -9,10 +9,10 @@ do
 		echo "FizzBuzz"
 	elif [ $(( counter % 3 )) -eq 0 ]
 	then
-		echo "Buzz"
+		echo "Fizz"
 	elif [ $(( counter % 5 )) -eq 0 ]
 	then
-		echo "Fizz"
+		echo "Buzz"
 	else
 		echo "$counter"
 	fi
