@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Bash script
+
+NEW_FILE="/var/run/holbertonscript.pid"
+echo $$ > $NEW_FILE
+trap 'echo I hate the kill command;sudo rm "$NEW_FILE"; exit' SIGTERM
+trap 'echo Y U no love me?!' SIGINT
+trap 'sudo rm "$NEW_FILE"; exit' SIGQUIT
+
+inf_count=1
+while [ $inf_count ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
