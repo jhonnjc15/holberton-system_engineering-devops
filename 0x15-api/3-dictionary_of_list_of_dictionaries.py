@@ -9,7 +9,7 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     users = requests.get(url + "users").json()
 
-    all_data = {}
+    all_data = dict()
     for u in users:
         user_id = u.get('id')
         all_data[user_id] = []
