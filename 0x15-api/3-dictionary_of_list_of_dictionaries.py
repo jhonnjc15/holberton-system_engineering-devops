@@ -15,8 +15,8 @@ if __name__ == "__main__":
         all_data[user_id] = []
         for t in requests.get(url + "todos",
                               params={"userId": user_id}).json():
-            task = {'username': u.get('username'),
-                    'task': t.get('title'),
+            task = {'task': t.get('title'),
+                    'username': u.get('username'),
                     'completed': t.get('completed')}
             all_data[user_id].append(task)
 
