@@ -13,8 +13,8 @@ if __name__ == "__main__":
     for u in users:
         user_id = u.get('id')
         all_data[user_id] = []
-        for t in requests.get(url + "users/{}/todos"
-                              .format(str(user_id))).json():
+        for t in requests.get(url + "todos",
+                              params={"userId": user_id}).json():
             task = {'username': u.get('username'),
                     'task': t.get('title'),
                     'completed': t.get('completed')}
